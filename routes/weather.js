@@ -32,10 +32,9 @@ async function generateWeatherData() {
         });
         const apiUrl = 'http://localhost:4000/api/weather/save';
 
-        // Send weather data to backend service API with API key in headers
         await axios.post(apiUrl, weatherDetails, {
             headers: {
-                'apikey': apiKey   // Include API key in the request header
+                'apikey': apiKey   // set api key here
             }
         });
 
