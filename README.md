@@ -6,5 +6,5 @@ Coventry Index : 13865313
 
 Github link : https://github.com/Uvindu2/WeatherAppGenerator.git
 
-Deployment Details
-please run local this service.
+please run local :
+node server.js
