@@ -17,7 +17,7 @@ async function generateWeatherData() {
             'Hambantota', 'Jaffna', 'Kilinochchi', 'Mannar', 'Mullaitivu', 'Vavuniya', 'Puttalam',
             'Kurunegala', 'Anuradhapura', 'Polonnaruwa', 'Badulla', 'Monaragala', 'Ratnapura', 'Kegalle',
             'Ampara', 'Batticaloa', 'Trincomalee'
-        ];        
+        ];
         const weatherDetails = districts.map(district => {
             const temperature = (Math.random() * 10 + 25).toFixed(2);
             const humidity = (Math.random() * 30 + 60).toFixed(2);
@@ -30,8 +30,8 @@ async function generateWeatherData() {
                 district
             };
         });
-        const apiUrl = 'http://localhost:4000/api/weather/save';
-
+        const apiUrl = 'https://weathermapbe.onrender.com/api/weather/save';
+        //  const apiUrl = 'http://localhost:4000/api/weather/save';
         await axios.post(apiUrl, weatherDetails, {
             headers: {
                 'apikey': apiKey   // set api key here
@@ -42,7 +42,7 @@ async function generateWeatherData() {
     } catch (error) {
         console.error('Error sending weather data:', error.message);
     }
-    setTimeout(generateWeatherData, 0.1 * 60 * 1000);
+    setTimeout(generateWeatherData, 2 * 60 * 1000);
 }
 
 generateWeatherData();
